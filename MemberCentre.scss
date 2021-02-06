@@ -1,0 +1,362 @@
+    @import "sass/var.scss";
+    //這個是取消全部樣式的css
+    @import "sass/reset";
+    //這個是bubble_btn的css，記得html要引用bubble_btn動畫效果的js & TweenMax
+    @import "sass/bubblebtn";
+
+     //----------------共用scss開始-------------------------
+     body {
+      font-family: $font_family;
+      color: map-get($color, "main_g");
+      letter-spacing: 0.1em;
+      line-height: 1.8;
+      font-size: map-get($fontsize, "normall");
+    }
+
+    html {
+      font-size: $html_fontsize;
+      // font-size: 16px;
+    }
+
+    a {
+      @include a_link;
+      color: map-get($color, "main_g");
+    }
+
+    img {
+      @include img;
+    }
+
+    section {
+      @include section;
+    }
+
+    article {
+      @include article;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .btn_green {
+      a {
+        background-color: map-get($color, "main_g");
+        color: map-get($color, "white");
+        margin: 0px auto;
+        @include btn;
+        @include a_link;
+      }
+    }
+
+    .btn_yellow {
+      a {
+        background-color: map-get($color, "yellow");
+        margin: 0px auto;
+        @include btn;
+        @include a_link;
+      }
+    }
+
+    .ex {
+      @extend %ex;
+    }
+
+    .bread {
+      float: left;
+      font-size: map-get($fontsize, "mini");
+      display: flex;
+    }
+
+    .full_wrapper {
+      @include full_wrapper;
+    }
+
+    // footer
+    footer {
+      background-color: #2f4f4f;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    footer a {
+      color: #fff;
+    }
+
+    footer article {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 50px 0;
+    }
+
+    footer .line {
+      border-left: 2px solid #fff;
+      height: 165px;
+    }
+
+    .brand_info {
+      height: 165px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-content: center;
+    }
+
+    .brand_info ul {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .brand_info ol {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 28px;
+    }
+
+    .brand_info li {
+      margin-right: 30px;
+    }
+
+    .logo_info {
+      line-height: 2;
+    }
+
+    .logo_info img {
+      display: block;
+      width: 250px;
+      margin-bottom: 20px;
+    }
+
+    //----------------以上不要動！！，以下開放自己的sass，按照自己的區塊放(可自己更動區塊名字)-------------------------
+    //首頁
+
+    //商品頁＆商品內頁
+
+    // //客製化多肉 ＆ 心理測驗
+    // @import "sass/custom";
+    // @import "sass/mindtest";
+
+    //手作課程
+
+    //部落格
+    .blog{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .blogbigPicture{
+      width: 100%;
+    }
+    .blogPage{
+      background-color: map-get($color, "gray2");
+      padding: 10px 10px; 
+      margin-left: 30px;
+      margin-top: 30px;
+      &:hover{
+        background-color: map-get($color, "white");
+        box-shadow: rgba(255,255,255,1.0);
+      }
+    }
+    .blogPng{
+      overflow: hidden;
+      width: 330px;
+      height: 340px;
+    }
+    .blog .blogPngimg01{
+      width: 1100px;
+      margin-left: -450px;
+      margin-top: -115px;
+    }
+    .blog .blogPngimg02{
+      width: 1000px;
+      margin-top: -150px;
+      margin-left: -70px;
+    }
+    .blog .blogPngimg03{
+      width: 700px;
+      margin-top: -100px;
+      margin-left: -50px;
+    }
+    .blog li{
+      margin-top: 20px;
+      list-style: none;
+    }
+    .blog h1{
+      margin: 0 auto;
+      margin-top: 10px;
+      width: 200px;
+    }
+
+    //購物車＆結帳系統
+
+    //會員中心 & 會員登入
+    .MemberCentrearticle{
+      padding-bottom: 200px;
+    }
+    @mixin memberpage {
+      margin-left: 270px;
+      margin-top: -296px;
+      border-radius: 20px;
+      background-color: map-get($color, "white");
+      padding-bottom: 50px;
+    }
+    @mixin memberpageh1 {
+      background-color: map-get($color, "main_g");
+      color: map-get($color, "white");
+      border-radius: 25px;
+      border-color: map-get($color, "main_g");
+      border-style: solid;
+      border-width: 2px;
+      padding: 15px 0;
+    }
+    // 個人資料
+    .btn_green{
+      margin-right: 900px;
+    }
+
+    .btn_green a{
+      margin-top: 15px;
+      border-style: solid;
+      border-color:#2f4f4f; 
+      border-width: 2px;
+      background-color: #eeebeb;
+      color: #2f4f4f;
+      &:hover{
+        background-color:#2f4f4f;
+        color:#eeebeb;
+      }
+    }
+    .member{
+      @include memberpage;
+    }
+    .member h1{
+      @include memberpageh1;
+    }
+    .member .PeopleAvatars{
+      width: 150px;
+      margin-right: 400px;
+      margin-top: 100px;
+    }
+    .member .photo{
+      width: 25px;
+      height: 25px;
+      margin-right: 310px;
+      position: relative;
+      bottom: 35px;
+      left: 10px;
+    }
+    .member ul{
+      margin-right: 20px;
+      margin-top: -190px;
+      padding-bottom: 40px;
+    }
+    .member ul li{
+      margin: 0 410px;
+    }
+    .member ul input{
+      background-color: map-get($color, "gray");
+      border-style: none;
+      padding: 10px 20px;
+      margin-left: 250px;
+      position: relative;
+      top: -30px;
+    }
+    .member .ID{
+      padding: 18px 95px;
+      margin-left: 460px;
+      position: relative;
+      top: -30px;
+    }
+    .member ul .add{
+      padding: 10px 50px;
+      margin-right: -60px;
+    }
+    // 所有訂單
+    .OrderTracking{
+      @include memberpage;
+    }
+    .OrderTracking h1{
+      @include memberpageh1;
+    }
+    .OrderTracking table{
+      margin: 50px auto;
+      border-width: 2px;
+      border-style: solid;
+      border-color: map-get($color, "gray");
+    }
+    .OrderTracking table .OrderTrackingtitle{
+      background-color: map-get($color, "gray");
+    }
+    .OrderTracking tr td{
+      padding: 10px 40px;
+    }
+    .OrderTracking .OrderTrackingChild{
+      border-width: 2px;
+      border-bottom-style: dashed;
+      border-color: map-get($color, "gray");
+    }
+    // 我的收藏清單
+    .MyCollection{
+      @include memberpage;
+    }
+    .MyCollection h1{
+      @include memberpageh1;
+    }
+    .MyCollection .MyCollectionPage{
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .MyCollection .MyCollectionLove{
+      padding: 0 15px;
+      border: map-get($color, "gray") 2px solid;
+      margin-left: 20px;
+      margin-top: 30px;
+      padding-bottom: 20px;
+    }
+    .MyCollection .MyCollectionLove .MyCollectionLovePhoto{
+      width: 200px;
+      margin-top: 20px;
+    }
+    .MyCollection .MyCollectionLove h2{
+      width: 200px;
+      font-size: 14px;
+      margin-left: 15px;
+    }
+    .MyCollection .MyCollectionLove li{
+      list-style: none;
+    }
+    .MyCollection .MyCollectionTrashcan{
+      width: 50px;
+      position: relative;
+      right: 90px;
+      margin: 10px 0;
+    }
+    .MyCollectionLove a{
+      margin-left: 55px;
+      margin-top: -70px;
+      background-color: #2f4f4f;
+      color: white;
+      padding: 10px 0;
+      border-radius: 10px
+    }
+    // 我有問題
+    .Ihaveaquestion{
+      @include memberpage;
+    }
+    .Ihaveaquestion input{
+      font-size: 16px;
+      background-color: map-get($color, "gray");
+      border-style: solid;
+      border-color: map-get($color, "gray");
+      border-radius: 10px;
+      padding: 18px 0;
+      padding-right: 330px;
+      padding-left: 10px;
+      margin-right: 200px;
+      position: relative;
+      top: 40px;
+    }
+    .Ihaveaquestion .bubble_btnn{
+      margin-left: 600px;
+      margin-top: -3px;
+    }
+    //Q&A
